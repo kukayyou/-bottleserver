@@ -12,4 +12,4 @@ GOPATH=`cd ${SCRIPTDIR}/../../; pwd`
 #echo "GOPATH:" $GOPATH;
 export GOPATH
 
-go build -o configserver main.go
+go build -o bottleserver main.go
