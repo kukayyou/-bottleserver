@@ -41,9 +41,9 @@ func (this BottleThrowController) BottleThrowApi(c *gin.Context) {
 	}
 	//查询用户信息
 	miniUserInfoResp, err := dao.GetMiniUserInfo(this.GetRequestId(), params.OpenID)
-	if err != nil {
+	if err != nil || miniUserInfoResp.ErrCode != 0 {
 		this.Resp.Code = BOTTLE_THROW_ERROR
-		this.Resp.Msg = err.Error()
+		this.Resp.Msg = "get mini user info failed!"
 		return
 	}
 
